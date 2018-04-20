@@ -1,0 +1,24 @@
+{
+  "name": "numero-por-extenso",
+  "version": "1.0.1",
+  "description": "Escreve números por extenso, números normais, monetários e porcentagens.",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "author": "Lenon Bordini",
+  "keywords": [
+    "numero",
+    "extenso",
+    "numero por extenso",
+    "escrever numero",
+    "monetario",
+    "porcentagem",
+    "escrever numero monetario"
+  ],
+  "license": "ISC",
+  "devDependencies": {
+    "assert": "^1.4.1",
+    "mocha": "^5.1.1"
+  }
+}
