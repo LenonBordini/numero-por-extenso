@@ -30,7 +30,7 @@ describe('testando estilo normal', () => {
             .forEach((n, i) => assert.equal(numero.porExtenso((i + 1) * 10), n))
     });
     test('escrevendo milhares', () => {
-        assert.equal(numero.porExtenso(1000), "mil");
+        assert.equal(numero.porExtenso(1000), "um mil");
         assert.equal(numero.porExtenso(2000), "dois mil");
         assert.equal(numero.porExtenso(10000), "dez mil");
         assert.equal(numero.porExtenso(20000), "vinte mil");
@@ -49,12 +49,12 @@ describe('testando README.md', () => {
         assert.equal(numero.porExtenso(1, numero.estilo.monetario), 'um real');
         assert.equal(numero.porExtenso(1, numero.estilo.porcentagem), 'um porcento');
     
-        assert.equal(numero.porExtenso(1234.50), 'mil duzentos e trinta e quatro vírgula cinco');
-        assert.equal(numero.porExtenso('1234.50'), 'mil duzentos e trinta e quatro vírgula cinquenta');
+        assert.equal(numero.porExtenso(1234.50), 'um mil duzentos e trinta e quatro vírgula cinco');
+        assert.equal(numero.porExtenso('1234.50'), 'um mil duzentos e trinta e quatro vírgula cinquenta');
         
-        assert.equal(numero.porExtenso(1234.5, numero.estilo.monetario), 'mil duzentos e trinta e quatro reais e cinquenta centavos');
+        assert.equal(numero.porExtenso(1234.5, numero.estilo.monetario), 'um mil duzentos e trinta e quatro reais e cinquenta centavos');
     
-        assert.equal(numero.porExtenso(1234.50, numero.estilo.porcentagem), 'mil duzentos e trinta e quatro vírgula cinco porcento');
-        assert.equal(numero.porExtenso('1234.50', numero.estilo.porcentagem), 'mil duzentos e trinta e quatro vírgula cinquenta porcento');
+        assert.equal(numero.porExtenso(1234.50, numero.estilo.porcentagem), 'um mil duzentos e trinta e quatro vírgula cinco porcento');
+        assert.equal(numero.porExtenso('1234.50', numero.estilo.porcentagem), 'um mil duzentos e trinta e quatro vírgula cinquenta porcento');
     });
 });
