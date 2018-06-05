@@ -1,26 +1,32 @@
 # Número por extenso
+
+[![Build Status](https://travis-ci.org/LenonBordini/numero-por-extenso.svg?branch=master)](https://travis-ci.org/LenonBordini/numero-por-extenso)
+
 Escreve números por extenso, números normais, monetários e porcentagens.
 Fácil implementação de novos tipos.
 > Não está totalmente testado ainda
 
 ## Instalação
+
 ```shell
 npm i numero-por-extenso --save
 ```
 
 ## Uso (Node.js)
+
 ```js
 const numero = require('numero-por-extenso');
 ```
 
 ## Exemplos
+
 ```js
 numero.porExtenso(1); // 'um'
 numero.porExtenso(1, numero.estilo.monetario); // 'um real'
 numero.porExtenso(1, numero.estilo.porcentagem); // 'um porcento'
 
 //'um mil duzentos e trinta e quatro vírgula cinco'
-numero.porExtenso(1234.50); 
+numero.porExtenso(1234.50);
 
 //'um mil duzentos e trinta e quatro vírgula cinquenta'
 numero.porExtenso('1234.50');
