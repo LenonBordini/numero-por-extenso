@@ -58,3 +58,9 @@ describe('testando README.md', () => {
         assert.equal(numero.porExtenso('1234.50', numero.estilo.porcentagem), 'um mil duzentos e trinta e quatro vírgula cinquenta porcento');
     });
 });
+
+describe('Issue #1', () => {
+    test('escrevendo 1.000.090.000,00', () => {
+        assert.equal(numero.porExtenso('1000090000.00', numero.estilo.monetario), 'um bilhão e noventa mil reais');
+    });
+});
