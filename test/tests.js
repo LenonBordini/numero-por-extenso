@@ -28,7 +28,7 @@ describe('testando estilo normal', () => {
     test('escrevendo centenas', () => {
         ['dez', 'vinte', 'trinta', 'quarenta', 'cinquenta', 'sessenta', 'setenta', 'oitenta', 'noventa']
             .forEach((n, i) => assert.equal(numero.porExtenso((i + 1) * 10), n))
-    });
+    });   
     test('escrevendo milhares', () => {
         assert.equal(numero.porExtenso(1000), "um mil");
         assert.equal(numero.porExtenso(2000), "dois mil");
@@ -40,7 +40,10 @@ describe('testando estilo normal', () => {
             .forEach((n, i) => assert.equal(numero.porExtenso(((i + 1) * 100000)), n + ' mil'));
     });
 
-    //TODO: More tests...
+    test('escrevendo números negativos', () => {
+        assert.equal(numero.porExtenso(-1), "menos um");
+        assert.equal(numero.porExtenso(-200), "menos duzentos");
+    });
 });
 
 describe('testando README.md', () => {
