@@ -1,15 +1,14 @@
-module.exports = {
-    porExtenso: porExtenso,
-    estilo: {
-        normal: 'normal',
-        monetario: 'monetario',
-        porcentagem: 'porcentagem'
-    }
+const estilos = {
+    normal: 'normal',
+    monetario: 'monetario',
+    porcentagem: 'porcentagem'
 };
 
-function porExtenso(numero, estilo, masculino = true) {
-    if (!estilo)
-        estilo = 'normal';
+module.exports = {
+    porExtenso: porExtenso,
+    estilo: estilos
+};
 
+function porExtenso(numero, estilo = estilos.normal, masculino = true) {
     return require('./lib/estilos/' + estilo)(numero, masculino);
 }
