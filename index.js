@@ -5,10 +5,14 @@ const estilos = {
 };
 
 module.exports = {
-    porExtenso: porExtenso,
+    porExtenso,
     estilo: estilos
 };
 
-function porExtenso(numero, estilo = estilos.normal, masculino = true) {
-    return require('./lib/estilos/' + estilo)(numero, masculino);
+function porExtenso(numero, estilo = estilos.normal) {
+    if (!estilos[estilo])
+        throw new Error(`Estilo "${estilo}" inválido. Possíveis valores: normal, monetario, porcentagem`);
+
+    return require('./lib/estilos/' + estilo)(numero);
 }
+

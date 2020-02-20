@@ -1,7 +1,7 @@
 {
   "name": "numero-por-extenso",
-  "version": "1.0.7",
-  "description": "Escreve números por extenso, números normais, monetários e porcentagens.",
+  "version": "1.0.8",
+  "description": "Escreve números por extenso: normais, monetários e porcentagens.",
   "main": "index.js",
   "repository": {
     "type": "git",
@@ -20,7 +20,7 @@
     "porcentagem",
     "escrever numero monetario"
   ],
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
     "assert": "^1.4.1",
     "mocha": "^5.1.1"

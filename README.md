@@ -2,43 +2,82 @@
 
 [![Build Status](https://travis-ci.org/LenonBordini/numero-por-extenso.svg?branch=master)](https://travis-ci.org/LenonBordini/numero-por-extenso)
 
-Escreve números por extenso, números normais, monetários e porcentagens.
+Escreve números por extenso: normais, monetários e porcentagens.
 Fácil implementação de novos tipos.
-> Não está totalmente testado ainda
+
+---
 
 ## Instalação
 
 ```shell
-npm i numero-por-extenso --save
+npm i numero-por-extenso
 ```
 
-## Uso (Node.js)
+---
+
+## Uso
 
 ```js
 const numero = require('numero-por-extenso');
 ```
 
-## Exemplos
+### Estilos existentes
+
+- normal (padrão)
+- monetario
+- porcentagem
+
+### Exemplos
+
+Números inteiros:
 
 ```js
-numero.porExtenso(1); // 'um'
-numero.porExtenso(1, numero.estilo.monetario); // 'um real'
-numero.porExtenso(1, numero.estilo.porcentagem); // 'um porcento'
+numero.porExtenso(128);
+// 'cento e vinte e oito'
 
-// 'um mil duzentos e trinta e quatro vírgula cinco'
-numero.porExtenso(1234.50);
+numero.porExtenso(128, numero.estilo.monetario);
+// 'cento e vinte e oito reais'
 
-// 'um mil duzentos e trinta e quatro vírgula cinquenta'
-numero.porExtenso('1234.50');
-
-// 'um mil duzentos e trinta e quatro reais e cinquenta centavos'
-numero.porExtenso(1234.5, numero.estilo.monetario);
-
-// 'um mil duzentos e trinta e quatro vírgula cinco porcento'
-numero.porExtenso(1234.50, numero.estilo.porcentagem);
-// 'um mil duzentos e trinta e quatro vírgula cinquenta porcento'
-numero.porExtenso('1234.50', numero.estilo.porcentagem);
-
-// Issue #1: 1.000.090.000,00 - 'um bilhão e noventa mil reais'
-numero.porExtenso('1000090000.00', numero.estilo.monetario);
+numero.porExtenso(128, numero.estilo.porcentagem);
+// 'cento e vinte e oito por cento'
 ```
+
+Números decimais:
+
+```js
+numero.porExtenso(10.50);
+// 'dez vírgula cinco décimos'
+
+numero.porExtenso(10.50, numero.estilo.monetario);
+// 'dez reais e cinquenta centavos'
+
+numero.porExtenso(10.50, numero.estilo.porcentagem);
+// 'dez vírgula cinco décimos por cento'
+```
+
+Números gigantes:
+
+```js
+numero.porExtenso(9_876_543_210);
+// 'nove bilhões oitocentos e setenta e seis milhões quinhentos e quarenta e três mil duzentos e dez'
+
+numero.porExtenso(-87_654_321, numero.estilo.monetario);
+// 'menos oitenta e sete milhões seiscentos e cinquenta e quatro mil trezentos e vinte e um reais'
+
+numero.porExtenso(123_456.7891, numero.estilo.porcentagem);
+// 'cento e vinte e três mil quatrocentos e cinquenta e seis vírgula sete mil oitocentos e noventa e um décimos de milésimo por cento'
+```
+
+Maior número possível (type number):
+
+- 999_999_999_999_999.9
+
+Maior número possível (type string):
+
+- '999999999999999999999999999999999999999999999.99999999999999999999'
+
+---
+
+## Licença
+
+MIT License - Copyright (c) 2020 Lenon Bordini
